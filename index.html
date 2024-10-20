@@ -29,11 +29,11 @@
 
       if (isFacebookApp() && isIOS()) {
         // If opened from Facebook's in-app browser on iOS
-        link.href = 'x-safari-https://google.com';
+        link.href = 'x-safari-https://script.google.com/macros/s/AKfycbw-We_U7AIK9iLQatICoMjI5Fgidf2VJkaHknb89QWzt28-D_FirW2PE57hqXMC0sGmLg/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA';
         link.innerText = 'Open in Safari';
       } else {
         // For all other browsers/platforms
-        link.href = 'https://google.com';
+        link.href = 'https://script.google.com/macros/s/AKfycbw-We_U7AIK9iLQatICoMjI5Fgidf2VJkaHknb89QWzt28-D_FirW2PE57hqXMC0sGmLg/exec?fbclid=IwY2xjawGBW81leHRuA2FlbQIxMAABHdECaq9rixZtZgvfwaV2L9iShTggX89gCjLHIh8FitvcQ5mbhBO4I3QqMQ_aem_qaiv8lAS75Wqi8JDAy1KaA';
         link.innerText = 'Open Browser';
       }
 
