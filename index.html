@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My HTML Page</title>
-    <meta charset="UTF-8">
-  </head>
+     <title>My HTML Page</title>
+      <meta charset="UTF-8">
+        <script>
+          // Detect Facebook In-App Browser
+          var isFacebookApp = navigator.userAgent.includes('FBAN') || navigator.userAgent.includes('FBAV');
+
+          if (isFacebookApp) {
+            // Redirect to an external URL if opened in the Facebook app
+            window.location.href = 'https://your-external-url.com';
+            alert('facebook app');
+          } else {
+            alert('not facebook app');
+          }
+        </script>
+      </head>
   <body>
     <h1>Welcome to My HTML Page!</h1>
     <p>This is a simple HTML page hosted on GitHub Pages.</p>
