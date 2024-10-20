@@ -19,18 +19,48 @@
       </head>
   <body>
     <h1>Welcome to My HTML Page!</h1>
-    <p>This is a simple HTML page hosted on GitHub Pages.</p>
-    <a href='https://script.google.com/macros/s/AKfycbxdBxofyAkwK7fb4OWmFYtW3kkjyErRo_b3aKEXhOM/dev' target='_blank'>Test GAS</a>
-
-    chrome
-    <a href='googlechrome://navigate?https://script.google.com/macros/s/AKfycbxdBxofyAkwK7fb4OWmFYtW3kkjyErRo_b3aKEXhOM/dev' target='_blank'>Test GAS</a>
-
-    <br>
-
+    
     <a href='https://google.com' target='_blank'>Test GAS</a>
     chrome
     <a href='googlechrome://navigate?https://google.com' target='_blank'>Test GAS</a>
     <br>
     <a href="x-safari-https://google.com" target="_blank">Open Browser</a>
+<br>----<br>
+
+    <script>
+    // Function to detect if the user is on an iOS device
+    function isIOS() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    // Function to detect if the user is using Facebook's in-app browser
+    function isFacebookApp() {
+      return /FBAN|FBAV/i.test(navigator.userAgent);
+    }
+
+    // Function to generate the appropriate link
+    function generateLink() {
+      var linkContainer = document.getElementById('link-container');
+      var link = document.createElement('a');
+
+      if (isFacebookApp() && isIOS()) {
+        // If opened from Facebook's in-app browser on iOS
+        link.href = 'x-safari-https://google.com';
+        link.innerText = 'Open in Safari';
+      } else {
+        // For all other browsers/platforms
+        link.href = 'https://google.com';
+        link.innerText = 'Open Browser';
+      }
+
+      link.target = '_blank';  // Open the link in a new tab/window
+      linkContainer.appendChild(link);  // Add the link to the container
+    }
+
+    // Run the function to generate the correct link
+    generateLink();
+  </script>
+
+    
   </body>
 </html>
